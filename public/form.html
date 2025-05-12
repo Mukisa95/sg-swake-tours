@@ -1,0 +1,37 @@
+<!-- This is a hidden form that Netlify can detect during build -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Booking Form</title>
+</head>
+<body>
+  <!-- Hidden form for Netlify -->
+  <form name="booking-form" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="firstName" />
+    <input type="text" name="lastName" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <select name="tourType">
+      <option value="Safari Adventure">Safari Adventure</option>
+      <option value="Cultural Experience">Cultural Experience</option>
+      <option value="Beach Holiday">Beach Holiday</option>
+      <option value="Mountain Trekking">Mountain Trekking</option>
+      <option value="Gorilla Tracking">Gorilla Tracking</option>
+      <option value="Business Travel">Business Travel</option>
+      <option value="Custom Package">Custom Package</option>
+    </select>
+    <select name="destination">
+      <option value="Kenya">Kenya</option>
+      <option value="Tanzania">Tanzania</option>
+      <option value="Uganda">Uganda</option>
+      <option value="Rwanda">Rwanda</option>
+      <option value="Zanzibar">Zanzibar</option>
+      <option value="Multiple Countries">Multiple Countries</option>
+    </select>
+    <input type="number" name="groupSize" />
+    <input type="date" name="arrivalDate" />
+    <input type="date" name="departureDate" />
+    <textarea name="specialRequests"></textarea>
+  </form>
+</body>
+</html> 

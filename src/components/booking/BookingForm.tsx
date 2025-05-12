@@ -56,16 +56,21 @@ const BookingForm = () => {
     console.log('Form submitted:', formData);
 
     try {
-      // Use the FormData API to properly handle form submission for Netlify
+      // Get the form element
       const form = e.target as HTMLFormElement;
-      const formData = new FormData(form);
       
+      // Create FormData object from the form
+      const formDataObj = new FormData(form);
+      
+      // Submit the form using Netlify's form handling
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
+        body: new URLSearchParams(formDataObj as any).toString()
       });
-
+      
+      console.log('Form submission response:', response);
+      
       // Show success message
       setIsSubmitted(true);
       
@@ -134,8 +139,9 @@ const BookingForm = () => {
               className="bg-neutral-50 rounded-lg p-8 shadow-md"
               data-netlify="true"
               name="booking-form"
+              method="POST"
             >
-              {/* Hidden field for Netlify Form handling */}
+              {/* Netlify form handling */}
               <input type="hidden" name="form-name" value="booking-form" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
