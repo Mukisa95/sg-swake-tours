@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://glittering-starship-0909ea.netlify.app/sitemap.xml 
